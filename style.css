@@ -1,0 +1,299 @@
+@import url('https://googleapis.com');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(120% 120% at 50% 0%, #0f172a 0%, #020617 100%);
+  min-height: 100vh;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  padding: 60px 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.app-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1.5px;
+  margin-bottom: 8px;
+}
+
+.app-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.panel-section {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 35px;
+  border-radius: 24px;
+  margin-bottom: 35px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.panel-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #3b82f6;
+}
+
+.indicator-dot.green {
+  background-color: #10b981;
+  box-shadow: 0 0 12px #10b981;
+}
+
+.panel-title-bar h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.form-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+input[type="date"], input[type="text"], textarea {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: rgba(2, 6, 23, 0.5);
+  color: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  background-color: rgba(2, 6, 23, 0.8);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+}
+
+.control-center {
+  background: rgba(2, 6, 23, 0.4);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 35px;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filter-input-group {
+  width: 100%;
+}
+
+.filter-buttons-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-action-primary {
+  flex: 1;
+  background: #3b82f6;
+  color: #f8fafc;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.btn-action-primary:hover {
+  background: #2563eb;
+}
+
+.btn-action-secondary {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 14px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-action-secondary:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.list-header {
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+  padding-bottom: 18px;
+  margin-bottom: 25px;
+}
+
+.btn-text-link {
+  background: transparent;
+  border: none;
+  color: #60a5fa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-text-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.logs-feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(30, 41, 59, 0.3);
+  padding: 24px;
+  border: 1px solid rgba(51, 65, 85, 0.3);
+  border-radius: 16px;
+}
+
+.note-badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.note-date {
+  background: rgba(71, 85, 105, 0.4);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+.note-topic {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.note-text {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.btn-delete {
+  background: rgba(239, 68, 68, 0.05);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-delete:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #475569;
+  padding: 40px 0;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

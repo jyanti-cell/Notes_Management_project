@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StellarLog | Daily Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <h1>✨ StellarLog</h1>
+      <p>Streamline your daily execution, notes & micro-tasks</p>
+    </header>
+    
+    <main class="container">
+      <section class="panel-section">
+        <div class="panel-title-bar">
+          <div class="indicator-dot"></div>
+          <h2>Create New Entry</h2>
+        </div>
+        <form id="noteForm" class="workspace-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="noteDate">Select Date</label>
+              <div class="input-wrapper">
+                <input type="date" id="noteDate" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="noteTopic">Context / Topic</label>
+              <div class="input-wrapper">
+                <input type="text" id="noteTopic" placeholder="e.g., Sprint Plan, Health, DevLog" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="noteText">Detailed Log Description</label>
+            <div class="input-wrapper">
+              <textarea id="noteText" rows="4" placeholder="Log your observations, critical action items, or remarks..." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">
+            <span>Commit Entry Log</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="panel-section">
+        <div class="control-center">
+          <div class="filter-box">
+            <div class="filter-input-group">
+              <label for="filterDate">Filter History by Date</label>
+              <input type="date" id="filterDate">
+            </div>
+            <div class="filter-buttons-row">
+              <button id="applyFilterBtn" class="btn-action-primary">Apply Filter</button>
+              <button id="clearFilter" class="btn-action-secondary">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-title-bar list-header">
+          <div class="panel-meta-title">
+            <div class="indicator-dot green"></div>
+            <h2>Activity Logs</h2>
+          </div>
+          <button id="viewAllBtn" class="btn-text-link">Sync All Records</button>
+        </div>
+        
+        <div id="notesContainer" class="logs-feed-container"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
